@@ -8,7 +8,7 @@ const Sidebar = () => {
                 <span>Nombre</span>
             </h3>
             <button className='buttons_btn'>
-Salir
+              Salir
             </button>
         </div>
         <div className='journal_new-entry pointer'>
