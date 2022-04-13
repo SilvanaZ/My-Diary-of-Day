@@ -1,34 +1,51 @@
 import React from 'react'
+import {useForm} from 'react-redux';
+import { } from '';
+import { } from '';
+import { } from '';
+import { } from '';
 
 export const Register = () => {
     return (
         <div>
-            <h3>Registrate</h3>
+            <h3 className='auth__title mb-5'>Registrate</h3>
             <div>
-                {/*Muestra los errores*/}
+                {/* mostraremos los errores */}
             </div>
             <form>
-                <input type="text"
-                    placeholder="Nombre"
-                    name="name"
-                    autocomplete='off' />
-                <input type="password"
-                    placeholder="Password"
-                    name="password" />
-                <input type="text"
-                    placeholder="Email"
-                    name="email"
-                    autocomplete='off' />
-                <input type="password"
-                    placeholder="Password"
-                    name="password" />
+                <input
+                    type="text"
+                    placeholder='Nombre'
+                    name={name}
+                    autoComplete='off'
+                    className='auth__input'
+                />
+                <input
+                    type="text"
+                    placeholder='Email'
+                    name={email}
+                    autoComplete='off'
+                    className='auth__input'
+                />
+                <input
+                    type="password"
+                    placeholder='Contraseña'
+                    name={password}
+                    className='auth__input'
+                />
+                <input
+                    type="password"
+                    placeholder='Confirmar contraseña'
+                    name={password2}
+                    className='auth__input'
+                />
                 <button
-                    type='submit'>
-                    Login
+                    type='submit'
+                    className="buttons__btn buttons__btn-primary buttons__btn-block mb-5"
+                >
+                    Registrame
                 </button>
             </form>
         </div>
     )
 }
-
-export default Register

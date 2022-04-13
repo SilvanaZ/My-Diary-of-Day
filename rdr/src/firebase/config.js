@@ -1,17 +1,24 @@
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import { analytics } from "firebase/analytics";
+import { getFirestore } from 'firebase/firestore';
+import { GoogleAuthProvider } from 'firebase/auth'
 
 const firebaseConfig = {
-    apiKey: "AIzaSyB0ZamZa-u7VWKOO18OLlhwWUUcPbOJ64M",
-    authDomain: "my-diary-note-my-days.firebaseapp.com",
-    projectId: "my-diary-note-my-days",
-    storageBucket: "my-diary-note-my-days.appspot.com",
-    messagingSenderId: "727914650391",
-    appId: "1:727914650391:web:a9a610d08f1e18921e3552",
-    measurementId: "G-4NK82PM92G"
+    apiKey: "AIzaSyCgP53uqZPTuxfHw_su7FifUU4RgSZPSTg",
+    authDomain: "notesc12.firebaseapp.com",
+    projectId: "notesc12",
+    storageBucket: "notesc12.appspot.com",
+    messagingSenderId: "1037682390431",
+    appId: "1:1037682390431:web:a312a8d623cde0b16539aa"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+
+const db = getFirestore(app);
+const googleAuthProvider = new GoogleAuthProvider();
+
+export {
+    db,
+    googleAuthProvider,
+    getFirestore
+}

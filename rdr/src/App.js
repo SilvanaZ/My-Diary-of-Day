@@ -1,9 +1,17 @@
-import React from 'react'
-import { AppRouter } from './routes/AppRouter'
-import { index } from './index'
+import { Provider } from 'react-redux';
+import { store } from './store';
+import { AppRouter } from './routes/AppRouter';
+import './App.scss';
 
-export const App = () => {
+function App() {
   return (
-    <AppRouter />
-  )
+    <Provider store={store}>
+
+      <AppRouter />
+
+    </Provider>
+
+  );
 }
+
+export default App;

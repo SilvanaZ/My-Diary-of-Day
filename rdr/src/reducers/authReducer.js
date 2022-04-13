@@ -1,7 +1,7 @@
-import React from 'react'
+import { types } from '../types';
 
 export const authReducer = (state = {}, action) => {
-    switch (action, type) {
+    switch (action.types) {
         case types.login:
             return {
                 uid: action.payload.uid,
