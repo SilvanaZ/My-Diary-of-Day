@@ -10,39 +10,29 @@ export const login = (uid, displayName) => ({
         displayName,
     }
 });
+
 export const startGoogleLogin = () => {
     return (dispatch) => {
         signInWithPopup(getAuth(),
             googleAuthProvider)
-            .then(({user}) => {
-                console.log(user);
-                dispatch(login(user.uid, user.displayName))
+            .then((info) => {
+                console.log(info)
             })
-            .catch(error => console.error(error))
     }
+}
+export
+export const finishLoading = () =>{
+    type: types.uifinish
 }
 
-export const startRegisterWithEmailandPassword = () =>{
-    (email, password, name)=>{
-        return (dispatch) =>{
-            createUserWithEmailAndPassword(getAuth(), email, password)
-            .then(async({user})=>{
-                await updateProfile(user,{
-                    displayName: name
-                })
-                dispatch(login(user.uid, user.displayName))
-            })
-            .catch(error => console.error(error))            
-        }
+export const startLogout = () =>{
+    return (dispatch) =>{
+        signOut(getAuth())
+        .then(  ()  =>{
+            dispatch(logout)
+        })
     }
 }
-
-export const startLoginWithEmailAndPassword = (email, password) =>{
-return (dispatch) =>{
-    dispatch(startLoading());
-    signInWithEmailAndPassword(getAuth(), email, password)
-    .then(({user})=>{
-        await 
-    })
-}
-    }
+export const logout = () =>({
+    type: types.logout
+})
